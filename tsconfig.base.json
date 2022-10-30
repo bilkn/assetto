@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@assetto/assetto-components": ["libs/assetto-components/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
