@@ -1,17 +1,17 @@
-import styled from '@emotion/styled';
+import { Button, styled } from '@mui/material';
+import { CustomButton } from '..';
+
 
 /* eslint-disable-next-line */
 export interface AssettoComponentsProps {}
 
-const StyledAssettoComponents = styled.div`
-  color: pink;
-`;
+const StyledButton = styled(Button)(({theme})=>{
+  return null
+})
 
 export function AssettoComponents(props: AssettoComponentsProps) {
   return (
-    <StyledAssettoComponents>
-      <h1>Welcome to AssettoComponents!</h1>
-    </StyledAssettoComponents>
+    <StyledButton />
   );
 }
 

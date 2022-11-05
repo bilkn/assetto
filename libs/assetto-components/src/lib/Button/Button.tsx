@@ -1,8 +1,8 @@
 import React from 'react';
-import MaterialButton from '@mui/material/Button';
+import MaterialButton, { ButtonProps } from '@mui/material/Button';
 
-function Button() {
-    return <MaterialButton>HELLO WORLD!</MaterialButton>
+function Button(props:ButtonProps) {
+    return <MaterialButton {...props}>HELLO WORLD!</MaterialButton>
 }
 
 export default Button
