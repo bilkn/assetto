@@ -1,0 +1,24 @@
+{
+  "extends": ["plugin:@nrwl/nx/react", "../../.eslintrc","airbnb","airbnb-typescript"],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    }
+  ],
+  "parserOptions": {
+    "project": "apps/assetto/tsconfig.json"
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off"
+  }
+}
