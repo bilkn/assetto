@@ -1,15 +1,16 @@
-import styled from '@emotion/styled';
-import NxWelcome from './nx-welcome';
-
-const StyledApp = styled.div`
-  // Your style here
-`;
+import { ThemeProvider } from '@mui/material';
+import theme from 'libs/custom-theme/src/lib/custom-theme';
+import { useEffect } from 'react';
+import GlobalStyles from '../styles/GlobalStyles';
 
 export function App() {
+  useEffect(() => {
+  }, []);
+
   return (
-    <StyledApp>
-      <NxWelcome title="assetto" />
-    </StyledApp>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+    </ThemeProvider>
   );
 }
 

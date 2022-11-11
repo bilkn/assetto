@@ -1,5 +1,5 @@
 {
-  "extends": ["plugin:@nrwl/nx/react", "../../.eslintrc.json"],
+  "extends": ["plugin:@nrwl/nx/react", "../../.eslintrc","airbnb","airbnb-typescript"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
@@ -14,5 +14,11 @@
       "files": ["*.js", "*.jsx"],
       "rules": {}
     }
-  ]
+  ],
+  "parserOptions": {
+    "project": "apps/assetto/tsconfig.json"
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off"
+  }
 }

@@ -1,17 +1,15 @@
-import { Button, styled } from '@mui/material';
-import { CustomButton } from '..';
+import { Button } from "@mui/material";
+
 
 
 /* eslint-disable-next-line */
 export interface AssettoComponentsProps {}
 
-const StyledButton = styled(Button)(({theme})=>{
-  return null
-})
+
 
 export function AssettoComponents(props: AssettoComponentsProps) {
   return (
-    <StyledButton />
+    <Button>Hello World</Button>
   );
 }
 

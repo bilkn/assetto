@@ -32,6 +32,9 @@ const theme = createTheme({
       0: '#4BB542',
       1: '#86C600',
     }
+  },
+  shape: {
+    borderRadius: 10
   }
 });
 
