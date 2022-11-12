@@ -1,2 +1,2 @@
-export * from './lib/assetto-components';
-export {default as CustomButton} from './lib/components/Button'
+// eslint-disable-next-line import/prefer-default-export
+export { default as CustomButton } from './lib/components/Button';

@@ -1,0 +1,40 @@
+{
+  "extends": [
+    "plugin:@nrwl/nx/react",
+    "../../.eslintrc",
+    "airbnb-base",
+    "airbnb-typescript/base"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    }
+  ],
+  "parserOptions": {
+    "project": [
+      "libs/assetto-components/tsconfig.json",
+      "libs\\assetto-components\\.storybook\\tsconfig.json"
+    ]
+  },
+  
+  "rules": {
+    "import/extensions":0
+  }
+}
