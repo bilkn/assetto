@@ -1,5 +1,5 @@
-import { CustomButton } from '@assetto/assetto-components';
 import { ThemeProvider } from '@mui/material';
+import CustomInput from 'libs/assetto-components/src/lib/components/CustomInput';
 import theme from 'libs/custom-theme/src/lib/custom-theme';
 import { useEffect } from 'react';
 import GlobalStyles from '../styles/GlobalStyles';
@@ -10,11 +10,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CustomButton variant="contained">Primary</CustomButton>
-      <CustomButton variant="contained" color="secondary">Secondary</CustomButton>
-      <CustomButton variant="outlined" color="secondary">Secondary</CustomButton>
-      <CustomButton variant="contained" color="warning">Secondary</CustomButton>
-      <CustomButton variant="contained">Secondary</CustomButton>
+      <CustomInput label="Testing" />
       <GlobalStyles />
     </ThemeProvider>
   );
