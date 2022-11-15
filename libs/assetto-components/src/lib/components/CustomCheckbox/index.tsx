@@ -26,14 +26,14 @@ const StyledCheckbox = styled(Checkbox)(({ theme }) => ({
 
 const StyledIcon = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.common.white,
-  height: '15px',
-  width: '15px',
+  height: '20px',
+  width: '20px',
 }));
 
 const StyledCheckedIcon = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
-  height: '15px',
-  width: '15px',
+  height: '20px',
+  width: '20px',
 }));
 
 function CustomCheckbox({ warn, disabled }:iCustomCheckbox) {
