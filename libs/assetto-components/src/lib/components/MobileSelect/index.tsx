@@ -1,34 +1,54 @@
 import { SelectUnstyled } from '@mui/base';
 import {
   Box,
-  FormControl, MenuItem, Select, SpeedDialIcon, styled,
+  Divider,
+  FormControl, MenuItem, Select, SelectProps, SpeedDialIcon, styled, useTheme,
 } from '@mui/material';
+import { useState } from 'react';
+import { CustomChevronIcon } from '../icons';
 
 const StyledSelect = styled(Select)(({ theme }) => ({
   backgroundColor: theme.palette.common.white,
+  color: theme.palette.primary.main,
   '& .MuiSelect-select': {
     paddingTop: '11px',
     paddingBottom: '11px',
   },
 }));
 
-const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
-
+export const CustomMenuItem = styled(MenuItem)(({ theme }) => ({
+  '&.Mui-selected': {
+    color: theme.palette.primary.main,
+  },
 }));
 
-function MobileSelect() {
+function MobileSelect({ children }:SelectProps) {
+  const theme = useTheme();
+  const [showChevron, setShowChevron] = useState(false);
+
+  const handleChange = (e:any) => {
+    console.log('HELLO', e);
+  };
+
+  const handleOpen = () => {
+    setShowChevron(false);
+  };
+
+  const handleClose = () => {
+    setShowChevron(true);
+  };
+
   return (
     <FormControl sx={{ width: '100%' }}>
-        <StyledSelect fullWidth endAdornment={<SpeedDialIcon />} IconComponent={Box} >
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Ten</MenuItem>
-            <MenuItem value={30}>Ten</MenuItem>
-            <MenuItem value={40}>Ten</MenuItem>
-            <MenuItem value={50}>Ten</MenuItem>
-            <MenuItem value={60}>Ten</MenuItem>
+        <StyledSelect onChange={handleChange} onOpen={handleOpen} onClose={handleClose} defaultValue={20} fullWidth endAdornment={showChevron ? <CustomChevronIcon color={theme.palette.primary.main} /> : null} MenuProps={{ MenuListProps: { sx: { color: theme.palette.text.secondary } }, sx: { '& > div + div + .MuiMenu-paper': { width: '100%' } } }} IconComponent={Box } >
+          {children}
         </StyledSelect>
     </FormControl>
+  /*     <ListItemIcon>
+<CustomTickIcon />
+</ListItemIcon> */
+
   );
-}
+} { /*    {Children.toArray(children).map((child) => React.cloneElement(child, {}))} */ }
 
 export default MobileSelect;
