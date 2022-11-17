@@ -36,7 +36,6 @@
   
   "rules": {
     "import/extensions":0,
-    "linebreak-style":"off",
     "@typescript-eslint/naming-convention": "off"
   }
 }
