@@ -9,9 +9,10 @@ import Home from '../pages/Home/Home';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Home />}>
-      test
-    </Route>,
-  ),
+      <Route path="1" element={<Home />} />
+      <Route path="2" element={<Home />} />
+    </Route>
+  )
 );
 
 export default router;

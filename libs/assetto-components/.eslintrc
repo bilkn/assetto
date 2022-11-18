@@ -16,11 +16,16 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {}
+      "rules": { "import/extensions":0,
+      "@typescript-eslint/indent":"off",
+    "@typescript-eslint/comma-dangle":"off",
+  "implicit-arrow-linebreak":"off"}
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "rules": {}
+      "rules": {
+        "@typescript-eslint/naming-convention":"off"
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
@@ -32,10 +37,5 @@
       "libs/assetto-components/tsconfig.json",
       "libs\\assetto-components\\.storybook\\tsconfig.json"
     ]
-  },
-  
-  "rules": {
-    "import/extensions":0,
-    "@typescript-eslint/naming-convention": "off"
   }
 }
