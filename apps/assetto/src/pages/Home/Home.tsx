@@ -1,20 +1,22 @@
 import { MobilePopoverNav } from '@assetto/assetto-components';
 import React from 'react';
 
-const mockList = [{
-  path: '/',
-  name: 'Preferences',
-}, {
-  path: '/',
-  name: 'Password',
-}, {
-  path: '/',
-  name: 'Account',
-}];
+const mockList = [
+  {
+    path: '/',
+    name: 'Preferences',
+  },
+  {
+    path: '/1',
+    name: 'Password',
+  },
+  {
+    path: '/2',
+    name: 'Account',
+  },
+];
 function Home() {
-  return (
-    <MobilePopoverNav list={mockList} />
-  );
+  return <MobilePopoverNav list={mockList} />;
 }
 
 export default Home;
