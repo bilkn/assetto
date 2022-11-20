@@ -1,25 +1,32 @@
-import styled from '@emotion/styled';
+import { styled } from '@mui/material/styles';
+import React from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
+
+interface iMobileMenuItemProps extends React.LiHTMLAttributes<HTMLLIElement> {
+  active: boolean;
+}
 
 export const MobileMenuContainer = styled('ul')(
   ({ theme }) => `
   background: #fff;
   border: 1px solid #e0e0e0;
-  border-radius: 5px;
+  border-radius: ${theme.shape.borderRadius}px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   padding-left: 0;
 `
 );
 
-export const MobileMenuItem = styled('li')(
-  ({ theme }) => `
-  border-bottom: 1px solid #eee;
-  color: ${(props: any) => (props.active ? 'black' : 'red')};
+export const MobileMenuItem: React.FC<iMobileMenuItemProps> = styled('li', {
+  shouldForwardProp: (prop) => prop !== 'active',
+})<{ active: boolean }>(
+  ({ theme, active }) => `
+  border-bottom: 1px solid ${theme.palette.grey['200']};
+  color: ${active ? theme.palette.primary.main : theme.palette.text.secondary};
   text-transform: capitalize;
   list-style: none;
   &:hover {
-    color: #0000009e;
+    color: ${active ? theme.palette.primary.main : 'inherit'};
   }
 `
 );

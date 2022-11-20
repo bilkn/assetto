@@ -1,1 +1,1 @@
-import '../../../custom-theme/src/theme';
+import 'libs/custom-theme/src/theme';

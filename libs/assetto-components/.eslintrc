@@ -19,7 +19,8 @@
       "rules": { "import/extensions":0,
       "@typescript-eslint/indent":"off",
     "@typescript-eslint/comma-dangle":"off",
-  "implicit-arrow-linebreak":"off"}
+  "implicit-arrow-linebreak":"off",
+"no-confusing-arrow":"off"}
     },
     {
       "files": ["*.ts", "*.tsx"],
