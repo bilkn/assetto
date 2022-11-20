@@ -1,23 +1,28 @@
-import React from 'react'
-
+import React from 'react';
 
 interface ExtraOptions {
-  [T]: React.CSSProperties['color']
+  [T]: React.CSSProperties['color'];
 }
-
 declare module '@mui/material/styles' {
   interface SimplePaletteColorOptions {
-    lighter?: string
-    darker?: string
+    lighter?: string;
+    darker?: string;
   }
 
   interface PaletteColor {
-    lighter?: string
-    darker?: string
-  } 
+    lighter?: string;
+    darker?: string;
+  }
 
   interface PaletteOptions {
-    extra?: ExtraOptions
+    extra?: ExtraOptions;
   }
 }
 
+declare module '@emotion/react' {
+  export interface Theme {
+    color: string;
+  }
+}
+
+export * from '.';

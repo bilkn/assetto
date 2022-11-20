@@ -34,7 +34,6 @@ function MobileNavMenu({ list }: iMobileNavMenuProps) {
                 <Typography sx={{ padding: '0' }}>
                   <MobileMenuLink to={path}>
                     {name}
-
                     {isOpen && isCurrentPath(path) && (
                       <CustomTickIcon color={theme.palette.primary.main} />
                     )}
