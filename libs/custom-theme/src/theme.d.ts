@@ -20,7 +20,7 @@ declare module '@mui/material/styles' {
 }
 
 declare module '@emotion/react' {
-  export interface Theme {
+  interface Theme {
     color: string;
   }
 }

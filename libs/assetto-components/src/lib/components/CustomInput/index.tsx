@@ -1,16 +1,17 @@
 import {
   FormControl,
   FormControlProps,
-  FormLabel, Input,
+  FormLabel,
+  Input,
   InputProps,
   styled,
 } from '@mui/material';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 interface iCustomInput extends FormControlProps {
-  label:string;
-  inputProps?:InputProps;
-  warn?:boolean;
+  label: string;
+  inputProps?: InputProps;
+  warn?: boolean;
 }
 const StyledInput = styled(Input)(({ theme }) => ({
   backgroundColor: theme.palette.common.white,
@@ -50,12 +51,21 @@ const StyledLabel = styled(FormLabel)(({ theme }) => ({
 }));
 
 function CustomInput({
-  disabled, warn, label, inputProps, ...rest
-}:iCustomInput) {
+  disabled,
+  warn,
+  label,
+  inputProps,
+  ...rest
+}: iCustomInput) {
   return (
-    <FormControl color={warn ? 'warning' : undefined} disabled={disabled} variant='outlined' {...rest}>
-        <StyledLabel sx={{ fontSize: '1.4rem' }}>{label}</StyledLabel>
-        <StyledInput {...inputProps} disableUnderline />
+    <FormControl
+      color={warn ? 'warning' : undefined}
+      disabled={disabled}
+      variant="outlined"
+      {...rest}
+    >
+      <StyledLabel sx={{ fontSize: '1.4rem' }}>{label}</StyledLabel>
+      <StyledInput {...inputProps} disableUnderline />
     </FormControl>
   );
 }

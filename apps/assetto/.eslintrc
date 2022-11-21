@@ -7,7 +7,10 @@
       "rules": {
         "implicit-arrow-linebreak": "off",
         "@typescript-eslint/naming-convention": "off",
-        "@typescript-eslint/comma-dangle": "off"
+        "@typescript-eslint/comma-dangle": "off",
+        "object-curly-newline":"off",
+        "operator-linebreak":"off",
+        "react/jsx-one-expression-per-line":"off"
       }
     },
     {

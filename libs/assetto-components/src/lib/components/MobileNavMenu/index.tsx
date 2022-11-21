@@ -23,21 +23,25 @@ function MobileNavMenu({ list }: iMobileNavMenuProps) {
   };
 
   const isCurrentPath = (path: string) => pathname === path;
-
   return (
     <Box>
       <MobileMenuContainer>
         {list.map(
           ({ path, name }) =>
             (isCurrentPath(path) || isOpen) && (
-              <MobileMenuItem onClick={handleItemClick}>
+              <MobileMenuItem
+                active={isCurrentPath(path)}
+                onClick={handleItemClick}
+              >
                 <Typography sx={{ padding: '0' }}>
                   <MobileMenuLink to={path}>
                     {name}
                     {isOpen && isCurrentPath(path) && (
                       <CustomTickIcon color={theme.palette.primary.main} />
                     )}
-                    {!isOpen && <CustomChevronIcon color="#CFCFCF" />}
+                    {!isOpen && (
+                      <CustomChevronIcon color={theme.palette.primary.main} />
+                    )}
                   </MobileMenuLink>
                 </Typography>
               </MobileMenuItem>
