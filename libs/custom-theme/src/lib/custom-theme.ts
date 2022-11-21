@@ -31,7 +31,7 @@ const theme = createTheme({
     },
     text: {
       primary: '#283054',
-      secondary: '#8D8D8D',
+      secondary: '#767676',
     },
     grey: {
       200: '#EAEAEA',
@@ -52,7 +52,16 @@ const theme = createTheme({
     body1: {
       fontSize: '1.6rem',
     },
+    body2: {
+      fontSize: '1.4rem',
+    },
+
+    h2: {
+      fontSize: '2rem',
+      fontWeight: 'normal',
+    },
   },
+  spacing: 5,
 });
 
 export default theme;
