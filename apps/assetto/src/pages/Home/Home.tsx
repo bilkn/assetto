@@ -1,7 +1,7 @@
-import { MobilePopoverNav } from '@assetto/assetto-components';
-import React from 'react';
+import { Stack } from '@mui/material';
+import { AssetCard } from '../../components';
 
-const mockList = [
+/* const mockList = [
   {
     path: '/',
     name: 'Preferences',
@@ -14,9 +14,23 @@ const mockList = [
     path: '/2',
     name: 'Account',
   },
-];
+]; */
+
+const mockAssetData = {
+  id: '1',
+  name: 'Bitcoin',
+  amount: '0.45',
+  symbol: 'BTC',
+  value: '2500',
+  currencySymbol: '$',
+  percent: '5,56%',
+  percentSign: '+',
+};
+
 function Home() {
-  return <MobilePopoverNav list={mockList} />;
+  return (
+    <Stack spacing={3}>{/*     <AssetCard asset={mockAssetData} /> */}</Stack>
+  );
 }
 
 export default Home;

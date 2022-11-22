@@ -6,7 +6,11 @@ function GlobalStyles() {
   return (
     <MuiGlobalStyles
       styles={{
-        '*, *::before, *::after': { boxSizing: 'border-box' },
+        '*, *::before, *::after': {
+          boxSizing: 'border-box',
+          margin: '0',
+          padding: '0',
+        },
         ':root, html': {
           backgroundColor: theme.palette.background.default,
           fontSize: '10px',
