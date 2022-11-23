@@ -1,5 +1,6 @@
 import { Stack } from '@mui/material';
-import { AssetCard } from '../../components';
+import { AssetCard, PriceCard } from '../../components';
+import { iPointSign } from '../../types/common';
 
 /* const mockList = [
   {
@@ -27,9 +28,21 @@ const mockAssetData = {
   percentSign: '+',
 };
 
+const mockPriceCardObj = {
+  id: '32432',
+  name: 'Dow Jones',
+  value: '31,841',
+  symbol: 'DOW',
+  currencySymbol: '$',
+  percent: '5,56%',
+  point: '14.23',
+  pointSign: '+' as iPointSign,
+};
 function Home() {
   return (
-    <Stack spacing={3}>{/*     <AssetCard asset={mockAssetData} /> */}</Stack>
+    <Stack spacing={3}>
+      <PriceCard marketItem={mockPriceCardObj} />
+    </Stack>
   );
 }
 
