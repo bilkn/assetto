@@ -62,6 +62,15 @@ const theme = createTheme({
     },
   },
   spacing: 5,
+  components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          boxShadow: customShadows[2],
+        },
+      },
+    },
+  },
 });
 
 export default theme;

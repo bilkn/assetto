@@ -13,7 +13,7 @@ function GlobalStyles() {
         },
         ':root, html': {
           backgroundColor: theme.palette.background.default,
-          fontSize: '10px',
+          fontSize: '62.5%',
         },
       }}
     />

@@ -56,14 +56,13 @@ function PriceCard({ marketItem }: iMarketItem) {
         </Stack>
         <Stack
           sx={{
-            alignItems: 'baseline',
             flexDirection: 'row',
             justifyContent: 'space-between',
           }}
         >
           <Typography
             variant="body1"
-            sx={{ fontSize: '1.4rem', fontWeight: '600' }}
+            sx={{ fontSize: '1.4rem', fontWeight: 500 }}
           >
             {value}
             {currencySymbol}

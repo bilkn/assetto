@@ -1,5 +1,6 @@
 import { Stack } from '@mui/material';
-import { AssetCard, PriceCard } from '../../components';
+import { AssetCard, AssetModalCurrency, PriceCard } from '../../components';
+import { iCurrencyAsset } from '../../types/business';
 import { iPointSign } from '../../types/common';
 
 /* const mockList = [
@@ -38,10 +39,22 @@ const mockPriceCardObj = {
   point: '14.23',
   pointSign: '+' as iPointSign,
 };
+
+const mockCurrencyAsset: iCurrencyAsset = {
+  amount: 500,
+  totalInCurrency: '300$',
+  type: 'Dollar',
+};
 function Home() {
   return (
     <Stack spacing={3}>
       <PriceCard marketItem={mockPriceCardObj} />
+      <AssetModalCurrency
+        open
+        asset={mockCurrencyAsset}
+        onClose={() => ({})}
+        onConfirm={() => ({})}
+      />
     </Stack>
   );
 }
