@@ -50,17 +50,10 @@ const StyledLabel = styled(FormLabel)(({ theme }) => ({
   },
 }));
 
-function CustomInput({
-  disabled,
-  warn,
-  label,
-  inputProps,
-  ...rest
-}: iCustomInput) {
+function CustomInput({ warn, label, inputProps, ...rest }: iCustomInput) {
   return (
     <FormControl
       color={warn ? 'warning' : undefined}
-      disabled={disabled}
       variant="outlined"
       {...rest}
     >

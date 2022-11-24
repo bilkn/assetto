@@ -21,7 +21,8 @@
     "@typescript-eslint/comma-dangle":"off",
   "implicit-arrow-linebreak":"off",
 "no-confusing-arrow":"off",
-"linebreak-style":"off"}
+"linebreak-style":"off",
+"object-curly-newline":"off"}
     },
     {
       "files": ["*.ts", "*.tsx"],
