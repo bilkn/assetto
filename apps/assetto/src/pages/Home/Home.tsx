@@ -1,4 +1,5 @@
 import { Stack } from '@mui/material';
+import { StyledInput } from 'libs/assetto-components/src/lib/components/CustomInput';
 import { AssetCard, AssetModalCurrency, PriceCard } from '../../components';
 import { iCurrencyAsset } from '../../types/business';
 import { iPointSign } from '../../types/common';
