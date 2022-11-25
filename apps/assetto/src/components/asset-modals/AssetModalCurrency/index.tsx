@@ -1,6 +1,6 @@
+import { AutoCompleteSearchbox, CustomTextField } from '@assetto/assetto-components';
 import { Stack } from '@mui/material';
 import { iCommonAssetModalProps } from 'apps/assetto/src/types/component';
-import CustomInput from 'libs/assetto-components/src/lib/components/CustomInput';
 import AssetModalBase from '../AssetModalBase';
 
 function AssetModalCurrency({
@@ -20,9 +20,9 @@ function AssetModalCurrency({
       onClose={onClose}
     >
       <Stack spacing={3}>
-        <CustomInput fullWidth label="Select Currency" />
-        <CustomInput fullWidth label="Select Currency" />
-        <CustomInput fullWidth label="Select Currency" />
+        <AutoCompleteSearchbox label='Asset' />
+        <CustomTextField fullWidth label="Select Currency" />
+        <CustomTextField fullWidth label="Select Currency" />
       </Stack>
     </AssetModalBase>
   );

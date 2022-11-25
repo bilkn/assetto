@@ -6,6 +6,7 @@ import {
   InputProps,
   styled,
 } from '@mui/material';
+import React from 'react';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 interface iCustomInput extends FormControlProps {
@@ -13,15 +14,15 @@ interface iCustomInput extends FormControlProps {
   inputProps?: InputProps;
   warn?: boolean;
 }
-const StyledInput = styled(Input)(({ theme }) => ({
+export const StyledInput = styled(Input)(({ theme }) => ({
   backgroundColor: theme.palette.common.white,
   border: `1px solid ${theme.palette.grey[400]}`,
   borderRadius: theme.shape.borderRadius,
   marginTop: '5px !important',
   input: {
-    padding: '5px',
-    paddingBottom: '9px',
-    paddingTop: '8px',
+    padding: '10px !important',
+    paddingBottom: '9px !important',
+    paddingTop: '8px !important',
   },
   '&:hover': {
     borderColor: theme.palette.grey[200],
@@ -41,7 +42,8 @@ const StyledInput = styled(Input)(({ theme }) => ({
   },
 }));
 
-const StyledLabel = styled(FormLabel)(({ theme }) => ({
+export const StyledLabel = styled(FormLabel)(({ theme }) => ({
+  fontSize: '1.4rem',
   '&.MuiFormLabel-colorWarning': {
     color: theme.palette.warning.main,
   },
@@ -50,17 +52,17 @@ const StyledLabel = styled(FormLabel)(({ theme }) => ({
   },
 }));
 
-function CustomInput({ warn, label, inputProps, ...rest }: iCustomInput) {
-  return (
+const CustomInput = React.forwardRef(
+  ({ warn, label, inputProps, ...rest }: iCustomInput, ref) => (
     <FormControl
       color={warn ? 'warning' : undefined}
       variant="outlined"
       {...rest}
     >
-      <StyledLabel sx={{ fontSize: '1.4rem' }}>{label}</StyledLabel>
-      <StyledInput {...inputProps} disableUnderline />
+      <StyledLabel>{label}</StyledLabel>
+      <StyledInput {...inputProps} ref={ref} disableUnderline />
     </FormControl>
-  );
-}
+  )
+);
 
 export default CustomInput;
