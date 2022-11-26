@@ -13,6 +13,7 @@ interface iCustomInput extends FormControlProps {
   label: string;
   inputProps?: InputProps;
   warn?: boolean;
+  name?: string;
 }
 export const StyledInput = styled(Input)(({ theme }) => ({
   backgroundColor: theme.palette.common.white,
@@ -53,14 +54,22 @@ export const StyledLabel = styled(FormLabel)(({ theme }) => ({
 }));
 
 const CustomInput = React.forwardRef(
-  ({ warn, label, inputProps, ...rest }: iCustomInput, ref) => (
+  ({ warn, label, inputProps, name, ...rest }: iCustomInput, ref) => (
     <FormControl
       color={warn ? 'warning' : undefined}
       variant="outlined"
+      sx={{ alignItems: 'flex-start', width: '100%' }}
       {...rest}
     >
-      <StyledLabel>{label}</StyledLabel>
-      <StyledInput {...inputProps} ref={ref} disableUnderline />
+      <StyledLabel htmlFor={name}>{label}</StyledLabel>
+      <StyledInput
+        id={name}
+        name={name}
+        {...inputProps}
+        ref={ref}
+        disableUnderline
+        fullWidth
+      />
     </FormControl>
   )
 );
