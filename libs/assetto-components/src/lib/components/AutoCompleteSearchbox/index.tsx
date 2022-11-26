@@ -1,5 +1,13 @@
-import { Autocomplete, AutocompleteProps, FormControl } from '@mui/material';
+import {
+  Autocomplete,
+  AutocompleteProps,
+  FormControl,
+  Stack,
+  useTheme,
+} from '@mui/material';
+import { useState } from 'react';
 import { StyledInput, StyledLabel } from '../CustomInput';
+import { CustomChevronIcon } from '../icons';
 
 const mockData = [
   { label: 'The Shawshank Redemption', year: 1994 },
@@ -22,19 +30,35 @@ type Props<T> = {
 };
 
 function AutoCompleteSearchbox(props: Props<IOptions>) {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const { label } = props;
+  const theme = useTheme();
 
+  // POSSIBLE_TODO: Add button to close and open dropdown menu
   return (
     <Autocomplete
+      onOpen={() => setIsOpen(true)}
+      onClose={() => setIsOpen(false)}
       options={mockData}
       renderInput={(params) => (
-        <FormControl sx={{ width: '100%' }}>
+        <FormControl sx={{ alignItems: 'flex-start', width: '100%' }}>
           <StyledLabel>{label}</StyledLabel>
           <StyledInput
             inputProps={params.inputProps}
             ref={params.InputProps.ref}
             disableUnderline
             fullWidth
+            endAdornment={
+              <Stack
+                sx={{
+                  transform: `rotateX(${isOpen ? '180' : '0'}deg)`,
+                  pointerEvents: 'none',
+                  paddingRight: '5px',
+                }}
+              >
+                <CustomChevronIcon color={theme.palette.grey['600']} />
+              </Stack>
+            }
           />
         </FormControl>
       )}
