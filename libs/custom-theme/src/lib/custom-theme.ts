@@ -33,8 +33,12 @@ const theme = createTheme({
       primary: '#283054',
       secondary: '#767676',
     },
+    neutral: {
+      main: '#EAEAEA',
+    },
     grey: {
       200: '#EAEAEA',
+      300: '#D8D8D8',
       400: '#C9C9C9',
       700: '#A5A5A5',
       900: '#6E6E6E',
@@ -69,6 +73,22 @@ const theme = createTheme({
           boxShadow: customShadows[2],
         },
       },
+    },
+    MuiButton: {
+      variants: [
+        {
+          props: { variant: 'contained', color: 'neutral' as const },
+          style: {
+            backgroundColor: 'grey.200',
+            '&:hover': {
+              backgroundColor: '#D8D8D8',
+            },
+            '&:active': {
+              backgroundColor: '#C9C9C9',
+            },
+          },
+        },
+      ],
     },
   },
 });
