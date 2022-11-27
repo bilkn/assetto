@@ -4,5 +4,6 @@ export { default as CustomTextField } from './lib/components/CustomInput';
 export { default as CustomCheckbox } from './lib/components/CustomCheckbox';
 export { default as MobilePopoverNav } from './lib/components/MobileNavMenu';
 export { default as AutoCompleteSearchbox } from './lib/components/AutoCompleteSearchbox';
+export { default as CustomDialog } from './lib/components/CustomDialog';
 
 export * from './lib/components/icons';

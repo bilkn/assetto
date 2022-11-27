@@ -1,8 +1,13 @@
 import React from 'react';
 
-interface ExtraOptions {
+interface IExtraOptions {
   [T]: React.CSSProperties['color'];
 }
+
+interface INeutralOptions {
+  [T]: React.CSSProperties['color'];
+}
+
 declare module '@mui/material/styles' {
   interface SimplePaletteColorOptions {
     lighter?: string;
@@ -15,13 +20,20 @@ declare module '@mui/material/styles' {
   }
 
   interface PaletteOptions {
-    extra?: ExtraOptions;
+    extra?: IExtraOptions;
+    neutral?: INeutralOptions;
   }
 }
 
 declare module '@emotion/react' {
   interface Theme {
     color: string;
+  }
+}
+
+declare module '@mui/material/Button' {
+  interface ButtonPropsColorOverrides {
+    neutral: true;
   }
 }
 

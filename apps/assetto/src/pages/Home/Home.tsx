@@ -1,8 +1,6 @@
-import { Stack } from '@mui/material';
-import { StyledInput } from 'libs/assetto-components/src/lib/components/CustomInput';
-import { AssetCard, AssetModalCurrency, PriceCard } from '../../components';
-import { iCurrencyAsset } from '../../types/business';
-import { iPointSign } from '../../types/common';
+import { CustomButton, CustomDialog } from '@assetto/assetto-components';
+import { Snackbar, Stack } from '@mui/material';
+import { useState } from 'react';
 
 /* const mockList = [
   {
@@ -19,7 +17,7 @@ import { iPointSign } from '../../types/common';
   },
 ]; */
 
-const mockAssetData = {
+/* const mockAssetData = {
   id: '1',
   name: 'Bitcoin',
   amount: '0.45',
@@ -28,9 +26,9 @@ const mockAssetData = {
   currencySymbol: '$',
   percent: '5,56%',
   percentSign: '+',
-};
+}; */
 
-const mockPriceCardObj = {
+/* const mockPriceCardObj = {
   id: '32432',
   name: 'Dow Jones',
   value: '31,841',
@@ -39,23 +37,22 @@ const mockPriceCardObj = {
   percent: '5,56%',
   point: '14.23',
   pointSign: '+' as iPointSign,
-};
+}; */
 
-const mockCurrencyAsset: iCurrencyAsset = {
+/* const mockCurrencyAsset: iCurrencyAsset = {
   amount: 500,
   totalInCurrency: '300$',
   type: 'Dollar',
-};
+}; */
+
 function Home() {
+  const [showSnackbar, setShowSnackbar] = useState<boolean>();
+  const toggleSnackbar = () => setShowSnackbar(!showSnackbar);
+
   return (
     <Stack spacing={3}>
-      <PriceCard marketItem={mockPriceCardObj} />
-      <AssetModalCurrency
-        open
-        asset={mockCurrencyAsset}
-        onClose={() => ({})}
-        onConfirm={() => ({})}
-      />
+      <CustomButton onClick={toggleSnackbar}>Toggle snackbar</CustomButton>
+      <Snackbar open={showSnackbar} message="That's good" />
     </Stack>
   );
 }
