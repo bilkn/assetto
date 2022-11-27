@@ -1,5 +1,6 @@
-import { CustomDialog } from '@assetto/assetto-components';
-import { Stack } from '@mui/material';
+import { CustomButton, CustomDialog } from '@assetto/assetto-components';
+import { Snackbar, Stack } from '@mui/material';
+import { useState } from 'react';
 
 /* const mockList = [
   {
@@ -45,13 +46,13 @@ import { Stack } from '@mui/material';
 }; */
 
 function Home() {
+  const [showSnackbar, setShowSnackbar] = useState<boolean>();
+  const toggleSnackbar = () => setShowSnackbar(!showSnackbar);
+
   return (
     <Stack spacing={3}>
-      <CustomDialog
-        title="Hello world"
-        body="Do you really want to use it?"
-        open
-      />
+      <CustomButton onClick={toggleSnackbar}>Toggle snackbar</CustomButton>
+      <Snackbar open={showSnackbar} message="That's good" />
     </Stack>
   );
 }

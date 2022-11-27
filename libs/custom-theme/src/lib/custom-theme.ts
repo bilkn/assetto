@@ -90,6 +90,15 @@ const theme = createTheme({
         },
       ],
     },
+    MuiSnackbar: {
+      styleOverrides: {
+        root: {
+          '& .MuiPaper-root': {
+            backgroundColor: '#6E6E6E',
+          },
+        },
+      },
+    },
   },
 });
 
