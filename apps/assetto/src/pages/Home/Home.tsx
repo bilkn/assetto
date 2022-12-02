@@ -1,6 +1,8 @@
 import { CustomButton, CustomDialog } from '@assetto/assetto-components';
 import { Snackbar, Stack } from '@mui/material';
 import { useState } from 'react';
+import { CustomChart } from '../../components';
+import { chartDataMock } from '../../mocks/chartDataMock';
 
 /* const mockList = [
   {
@@ -46,13 +48,9 @@ import { useState } from 'react';
 }; */
 
 function Home() {
-  const [showSnackbar, setShowSnackbar] = useState<boolean>();
-  const toggleSnackbar = () => setShowSnackbar(!showSnackbar);
-
   return (
     <Stack spacing={3}>
-      <CustomButton onClick={toggleSnackbar}>Toggle snackbar</CustomButton>
-      <Snackbar open={showSnackbar} message="That's good" />
+      <CustomChart chartData={chartDataMock} />
     </Stack>
   );
 }
