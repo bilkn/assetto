@@ -1,11 +1,11 @@
-import { Box } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import { MobileAppBar } from '../../components';
 
 function MainLayout({ children }: { children: JSX.Element }) {
   return (
     <Box>
       <MobileAppBar />
-      {children}
+      <Container>{children}</Container>
     </Box>
   );
 }
