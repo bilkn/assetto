@@ -1,7 +1,8 @@
 import { useTheme } from '@mui/material';
-import React, { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
-function useChartConfig(chartData: any, tab: any) {
+function useChartConfig(chartData: any) {
+  const [tab, setTab] = useState<string>('1H');
   const [balance, setBalance] = useState(200);
   const [time, setTime] = useState('Total Asset Balance');
   const [xValues, setxValues] = useState(chartData['1H'].x);
@@ -9,9 +10,6 @@ function useChartConfig(chartData: any, tab: any) {
   const theme = useTheme();
 
   useEffect(() => {
-    const validDates = ['1D', '1W', '1M', '1Y', 'YTD'];
-
-    if (!validDates.includes(tab)) return;
     setxValues(chartData[tab].x);
     setyValues(chartData[tab].y);
   }, [tab]);

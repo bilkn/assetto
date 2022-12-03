@@ -1,42 +1,110 @@
-import { Box, ButtonGroup, Paper, Stack, Typography } from '@mui/material';
+import {
+  Box,
+  ButtonGroup,
+  Divider,
+  FormControlLabel,
+  Paper,
+  Radio,
+  RadioGroup,
+  Stack,
+  Typography,
+  useTheme,
+} from '@mui/material';
 import { useState } from 'react';
 import Chart from 'react-apexcharts';
+import { CustomChartRadio } from './style';
 import useConfig from './useChartConfig';
 
 const mockTotalBalanceData = {
-  balance: '34,000',
+  balance: '$34,000',
   percent: '4.3%',
   percentSign: '-',
 };
+const dateList = [
+  { value: 'YTD', label: 'YTD' },
+  { value: '5_YEAR', label: '5Y' },
+  { value: '1_YEAR', label: '1Y' },
+  { value: '1_MONTH', label: '1M' },
+  { value: '1_WEEK', label: '1W' },
+  { value: '1_DAY', label: '1D' },
+];
 
-
+function BottomBorder() {
+  const theme = useTheme();
+  return (
+    <Box
+      sx={{
+        background: theme.palette.primary.main,
+        height: '2px',
+        mt: '2px',
+        width: '70%',
+      }}
+    />
+  );
+}
 
 function CustomChart(props: any) {
-  const { chartData } = props;
-  const [tab, setTab] = useState('1H');
-  const { config, time } = useConfig(chartData, tab);
+  const { chartData = dateList } = props;
+  const { config, time } = useConfig(chartData);
   const { balance, percent, percentSign } = mockTotalBalanceData;
+  const [currentDate, setCurrentDate] = useState<string>(dateList[0].value);
 
-  const dateList = ['YTD','5 Year','1 Year','1 Month','1 Week','1 Day']
-
+  const handleDateChange = (event: any) => {
+    const { value } = event.target;
+    setCurrentDate(value);
+  };
   // TODO: ADD CONDITIONAL COLOR TO PERCENT
   return (
     <Box>
-      <Paper>
-        <Box sx={{ p: '12px' }}>
-          <Typography variant="h3">TOTAL BALANCE</Typography>
-          <Typography>
+      <Paper sx={{ py: 3 }}>
+        <Box sx={{ px: '12px' }}>
+          <Typography
+            variant="h3"
+            color="text.secondary"
+            sx={{ fontSize: '1.5rem' }}
+          >
+            TOTAL BALANCE
+          </Typography>
+          <Typography
+            sx={{ fontSize: '2rem', fontWeight: '600', mt: 1, lineHeight: 1 }}
+          >
             {balance}{' '}
             <Typography
               component="span"
-              sx={{ color: 'warning.main', fontSize: '1.2rem' }}
+              sx={{ color: 'warning.main', fontSize: '1.4rem' }}
             >
               {percentSign + percent}
             </Typography>
           </Typography>
-          <Stack>
-            {dateList.map((date)=><Typography></Typography>)}
-          </Stack>
+          <RadioGroup
+            sx={{
+              flexDirection: 'row',
+              mt: 3,
+              flexWrap: 'nowrap',
+              width: '100%',
+            }}
+            onChange={handleDateChange}
+          >
+            {dateList.map(({ value, label }, i) => (
+              <Stack sx={{ alignItems: 'center', width: '100%' }}>
+                {i !== 0 && <Divider orientation="vertical" flexItem />}
+                <FormControlLabel
+                  value={value}
+                  control={<CustomChartRadio />}
+                  label={label}
+                  sx={{
+                    mx: '0',
+                    justifyContent: 'center',
+                    width: '100%',
+                  }}
+                />
+                {currentDate === value && <BottomBorder />}
+              </Stack>
+            ))}
+          </RadioGroup>
+          {/*    {dateList.map((date) => (
+          <Typography>{date}</Typography>
+        ))} */}
         </Box>
         <Chart
           options={config.options}
