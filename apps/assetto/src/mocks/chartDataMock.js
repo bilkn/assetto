@@ -1,13 +1,18 @@
+let time = 0;
+const createDate = () => {
+  time += 1000000000;
+  return new Date().getTime() + time;
+};
 export const chartDataMock = {
   '1H': {
     x: [
-      '13 March 2022, 22:01',
-      '13 March 2022, 22:10',
-      '13 March 2022, 22:20',
-      '13 March 2022, 22:30',
-      '13 March 2022, 22:40',
-      '13 March 2022, 22:50',
-      '13 March 2022, 23:01',
+      createDate(),
+      createDate(),
+      createDate(),
+      createDate(),
+      createDate(),
+      createDate(),
+      createDate(),
     ],
     y: [
       {
