@@ -1,8 +1,5 @@
-import { CustomButton, CustomDialog } from '@assetto/assetto-components';
-import { Snackbar, Stack } from '@mui/material';
-import { useState } from 'react';
-import { CustomChart } from '../../components';
-import { chartDataMock } from '../../mocks/chartDataMock';
+import { Stack } from '@mui/material';
+import { AssetCard, AssetDistributionChart } from '../../components';
 
 /* const mockList = [
   {
@@ -19,7 +16,7 @@ import { chartDataMock } from '../../mocks/chartDataMock';
   },
 ]; */
 
-/* const mockAssetData = {
+const mockAssetData = {
   id: '1',
   name: 'Bitcoin',
   amount: '0.45',
@@ -28,7 +25,7 @@ import { chartDataMock } from '../../mocks/chartDataMock';
   currencySymbol: '$',
   percent: '5,56%',
   percentSign: '+',
-}; */
+};
 
 /* const mockPriceCardObj = {
   id: '32432',
@@ -50,7 +47,8 @@ import { chartDataMock } from '../../mocks/chartDataMock';
 function Home() {
   return (
     <Stack spacing={3}>
-      <CustomChart chartData={chartDataMock} />
+      <AssetDistributionChart />
+      <AssetCard asset={mockAssetData} />
     </Stack>
   );
 }

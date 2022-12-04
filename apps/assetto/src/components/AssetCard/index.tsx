@@ -8,6 +8,7 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
+import ThreeDotsMenuButton from '../utils/ThreeDotsMenuButton';
 
 interface iAsset {
   id: string;
@@ -31,25 +32,12 @@ function AssetCard({ asset }: { asset: iAsset }) {
     percent,
     percentSign,
   } = asset;
-  const theme = useTheme();
 
   return (
     <Card>
       <Box>
         <CardContent sx={{ position: 'relative' }}>
-          <IconButton sx={{ position: 'absolute', top: '5px', right: '10px' }}>
-            <Box
-              sx={{
-                alignItems: 'center',
-                display: 'flex',
-                height: '25px',
-                justifyContent: 'center',
-                width: '25px',
-              }}
-            >
-              <CustomThreeDotsIcon color={theme.palette.grey[400]} />
-            </Box>
-          </IconButton>
+          <ThreeDotsMenuButton />
           <Typography variant="h2" color="primary.main">
             {name}
           </Typography>

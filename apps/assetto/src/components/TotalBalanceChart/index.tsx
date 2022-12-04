@@ -42,7 +42,7 @@ function BottomBorder() {
   );
 }
 
-function CustomChart(props: any) {
+function TotalBalanceChart(props: any) {
   const { chartData = dateList } = props;
   const { config } = useConfig(chartData);
   const { balance, percent, percentSign } = mockTotalBalanceData;
@@ -118,4 +118,4 @@ function CustomChart(props: any) {
   );
 }
 
-export default CustomChart;
+export default TotalBalanceChart;
