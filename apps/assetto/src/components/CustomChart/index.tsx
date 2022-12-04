@@ -1,10 +1,8 @@
 import {
   Box,
-  ButtonGroup,
   Divider,
   FormControlLabel,
   Paper,
-  Radio,
   RadioGroup,
   Stack,
   Typography,
@@ -35,9 +33,10 @@ function BottomBorder() {
     <Box
       sx={{
         background: theme.palette.primary.main,
+        borderRadius: '10px',
         height: '2px',
         mt: '2px',
-        width: '70%',
+        width: '60%',
       }}
     />
   );
@@ -45,7 +44,7 @@ function BottomBorder() {
 
 function CustomChart(props: any) {
   const { chartData = dateList } = props;
-  const { config, time } = useConfig(chartData);
+  const { config } = useConfig(chartData);
   const { balance, percent, percentSign } = mockTotalBalanceData;
   const [currentDate, setCurrentDate] = useState<string>(dateList[0].value);
 
@@ -53,7 +52,7 @@ function CustomChart(props: any) {
     const { value } = event.target;
     setCurrentDate(value);
   };
-  // TODO: ADD CONDITIONAL COLOR TO PERCENT
+  // TODO: ADD CONDITIONAL COLOR TO THE TOTAL BALANCE PERCENTAGE
   return (
     <Box>
       <Paper sx={{ py: 3 }}>
@@ -86,33 +85,34 @@ function CustomChart(props: any) {
             onChange={handleDateChange}
           >
             {dateList.map(({ value, label }, i) => (
-              <Stack sx={{ alignItems: 'center', width: '100%' }}>
+              <>
                 {i !== 0 && <Divider orientation="vertical" flexItem />}
-                <FormControlLabel
-                  value={value}
-                  control={<CustomChartRadio />}
-                  label={label}
-                  sx={{
-                    mx: '0',
-                    justifyContent: 'center',
-                    width: '100%',
-                  }}
-                />
-                {currentDate === value && <BottomBorder />}
-              </Stack>
+                <Stack sx={{ alignItems: 'center', width: '100%' }}>
+                  <FormControlLabel
+                    value={value}
+                    control={<CustomChartRadio />}
+                    label={label}
+                    sx={{
+                      mx: '0',
+                      justifyContent: 'center',
+                      width: '100%',
+                    }}
+                  />
+                  {currentDate === value && <BottomBorder />}
+                </Stack>
+              </>
             ))}
           </RadioGroup>
-          {/*    {dateList.map((date) => (
-          <Typography>{date}</Typography>
-        ))} */}
         </Box>
-        <Chart
-          options={config.options}
-          series={config.seriesData}
-          type="area"
-          width="100%"
-          height={320}
-        />
+        <Box sx={{ px: 3 }}>
+          <Chart
+            options={config.options}
+            series={config.seriesData}
+            type="area"
+            width="100%"
+            height={320}
+          />
+        </Box>
       </Paper>
     </Box>
   );
