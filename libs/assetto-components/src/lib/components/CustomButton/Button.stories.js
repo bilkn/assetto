@@ -1,4 +1,4 @@
-import CustomButton from '.';
+import CustomButton from './CustomButton';
 
 export default {
   title: 'Button',

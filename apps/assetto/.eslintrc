@@ -13,7 +13,8 @@
         "react/jsx-one-expression-per-line":"off",
         "no-confusing-arrow":"off",
         "react/jsx-props-no-spreading":"off",
-        "jsx-quotes":"off"
+        "jsx-quotes":"off",
+        "import/prefer-default-export":"off"
       }
     },
     {

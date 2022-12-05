@@ -3,8 +3,8 @@ import {
   CustomTextField,
 } from '@assetto/assetto-components';
 import { Stack } from '@mui/material';
-import { iCommonAssetModalProps } from 'apps/assetto/src/types/component';
-import AssetModalBase from '../AssetModalBase';
+import { iCommonAssetModalProps } from 'apps/assetto/src/types/component.types';
+import AssetModalBase from '../AssetModalBase/AssetModalBase';
 
 function AssetModalCurrency({
   open,

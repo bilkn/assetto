@@ -5,8 +5,9 @@ import {
   Stack,
   useTheme,
 } from '@mui/material';
+import { IAutoCompleteOptions } from 'libs/assetto-components/src/types/component.types';
 import { useState } from 'react';
-import { StyledInput, StyledLabel } from '../CustomInput';
+import { StyledInput, StyledLabel } from '../CustomInput/CustomInput';
 import { CustomChevronIcon } from '../icons';
 
 const mockData = [
@@ -19,17 +20,13 @@ const mockData = [
   { label: 'Pulp Fiction', year: 1994 },
 ];
 
-interface IOptions {
-  label: string;
-  year: number;
-}
 type Props<T> = {
   autoCompleteProps?: AutocompleteProps<T, undefined, undefined, undefined>;
   label: string;
   loading?: boolean;
 };
 
-function AutoCompleteSearchbox(props: Props<IOptions>) {
+function AutoCompleteSearchbox(props: Props<IAutoCompleteOptions>) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { label } = props;
   const theme = useTheme();

@@ -1,4 +1,4 @@
-import { iCurrencyAsset } from './business';
+import { iCurrencyAsset } from '../../../../libs/assetto-components/src/types/domain.types';
 
 interface iCommonAssetModalProps {
   open: boolean;

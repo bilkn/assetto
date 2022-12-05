@@ -5,7 +5,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
-import CustomButton from '../Button';
+import CustomButton from '../CustomButton/CustomButton';
 
 interface IDialogProps extends DialogProps {
   title: string;
