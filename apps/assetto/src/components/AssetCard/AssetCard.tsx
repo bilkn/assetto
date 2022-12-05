@@ -1,25 +1,6 @@
-import { CustomThreeDotsIcon } from '@assetto/assetto-components';
-import {
-  Box,
-  Card,
-  CardContent,
-  IconButton,
-  Stack,
-  Typography,
-  useTheme,
-} from '@mui/material';
+import { Box, Card, CardContent, Stack, Typography } from '@mui/material';
+import { iAsset } from 'libs/shared-types/src';
 import ThreeDotsMenuButton from '../utils/ThreeDotsMenuButton';
-
-interface iAsset {
-  id: string;
-  name: string;
-  amount: string;
-  symbol: string;
-  value: string;
-  currencySymbol: string;
-  percent: string;
-  percentSign: string;
-}
 
 function AssetCard({ asset }: { asset: iAsset }) {
   const {

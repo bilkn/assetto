@@ -1,5 +1,5 @@
-import { Box, Card, CardContent, Stack, Typography } from '@mui/material';
-import { iPointSign } from '../../types/common';
+import { Card, CardContent, Stack, Typography } from '@mui/material';
+import { iPointSign } from '../../types/common.types';
 
 interface iPriceCard {
   id: string;

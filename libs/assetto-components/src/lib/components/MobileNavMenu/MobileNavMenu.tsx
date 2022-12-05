@@ -1,16 +1,12 @@
 import { Box, Typography, useTheme } from '@mui/material';
+import { IMobileNavMenuItem } from 'libs/assetto-components/src/types/component.types';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { CustomChevronIcon, CustomTickIcon } from '../icons';
 import { MobileMenuContainer, MobileMenuItem, MobileMenuLink } from './style';
 
-interface iMobileNavMenuItem {
-  name: string;
-  path: string;
-}
-
 interface iMobileNavMenuProps {
-  list: iMobileNavMenuItem[];
+  list: IMobileNavMenuItem[];
 }
 
 function MobileNavMenu({ list }: iMobileNavMenuProps) {

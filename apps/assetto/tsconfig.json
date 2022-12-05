@@ -22,7 +22,7 @@
     "../../node_modules/@nrwl/react/typings/image.d.ts",
     "../../node_modules/@nrwl/react/typings/styled-jsx.d.ts",
   ],
-  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "../../libs/assetto-components/src/types/domain.types.d.ts"],
   "exclude": [
     "jest.config.ts",
     "**/*.spec.ts",

@@ -1,6 +1,4 @@
-import {
-  Box, Checkbox, styled,
-} from '@mui/material';
+import { Box, Checkbox, styled } from '@mui/material';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 interface iCustomCheckbox {
@@ -36,10 +34,14 @@ const StyledCheckedIcon = styled(Box)(({ theme }) => ({
   width: '20px',
 }));
 
-function CustomCheckbox({ warn, disabled }:iCustomCheckbox) {
+function CustomCheckbox({ warn, disabled }: iCustomCheckbox) {
   return (
-    <StyledCheckbox color={warn ? 'warning' : undefined} disabled={disabled}
-    icon={<StyledIcon />} checkedIcon={<StyledCheckedIcon />} />
+    <StyledCheckbox
+      color={warn ? 'warning' : undefined}
+      disabled={disabled}
+      icon={<StyledIcon />}
+      checkedIcon={<StyledCheckedIcon />}
+    />
   );
 }
 
