@@ -22,7 +22,8 @@
   "implicit-arrow-linebreak":"off",
 "no-confusing-arrow":"off",
 "linebreak-style":"off",
-"object-curly-newline":"off"}
+"object-curly-newline":"off"
+,"operator-linebreak":"off"}
     },
     {
       "files": ["*.ts", "*.tsx"],

@@ -13,7 +13,7 @@ interface iCustomInput extends FormControlProps {
   label: string;
   inputProps?: InputProps;
   warn?: boolean;
-  name?: string;
+  name: string;
 }
 export const StyledInput = styled(Input)(({ theme }) => ({
   backgroundColor: theme.palette.common.white,
