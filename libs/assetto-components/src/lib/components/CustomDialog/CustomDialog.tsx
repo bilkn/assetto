@@ -12,10 +12,13 @@ interface IDialogProps extends DialogProps {
   body: string;
   cancelText?: string;
   confirmText?: string;
+  onConfirm: () => void;
+  onCancel: () => void;
 }
 
 function CustomDialog(props: IDialogProps) {
-  const { title, cancelText, confirmText, body, ...rest } = props;
+  const { title, cancelText, confirmText, onConfirm, onCancel, body, ...rest } =
+    props;
 
   return (
     <Dialog {...rest} PaperProps={{ sx: { p: 4, pt: 5, minWidth: '300px' } }}>
@@ -26,6 +29,7 @@ function CustomDialog(props: IDialogProps) {
       <Stack sx={{ mt: 4 }} direction="row" spacing={6}>
         {
           <CustomButton
+            onClick={onCancel}
             variant="contained"
             color="neutral"
             sx={{ width: '100%' }}
@@ -35,6 +39,7 @@ function CustomDialog(props: IDialogProps) {
         }
         {
           <CustomButton
+            onClick={onConfirm}
             variant="contained"
             color="primary"
             sx={{ width: '100%' }}
