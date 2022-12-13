@@ -11,7 +11,7 @@
         "**/package-lock.json": true,
         "**/nx.json": true,
         "**/jest.preset.js": true,
-        "**/jest.config.ts": true,
+        "**/jest.config.ts": false,
         "**/babel.config.json": true,
         "**/.prettierrc": false,
         "**/.prettierignore": true,
