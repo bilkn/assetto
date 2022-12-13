@@ -35,8 +35,5 @@
   "**/*.spec.js",
   "**/*.test.jsx",
   "**/*.spec.jsx",
-  "**/*.d.ts"],
-  "exclude": [
-    "jest.config.ts",
-  ],
+  "**/*.d.ts","jest.config.ts"]
 }
