@@ -1,5 +1,10 @@
 import { Stack } from '@mui/material';
-import { AssetCard, AssetDistributionChart } from '../../components';
+import {
+  AssetCard,
+  AssetDistributionChart,
+  CustomBottomNavigation,
+  FAB,
+} from '../../components';
 import mockAssetData from '../../mocks/mockAssetData';
 
 /* const mockList = [
@@ -28,6 +33,7 @@ function Home() {
     <Stack spacing={3}>
       <AssetDistributionChart />
       <AssetCard asset={mockAssetData} />
+      <FAB />
     </Stack>
   );
 }
