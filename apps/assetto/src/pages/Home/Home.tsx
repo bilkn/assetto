@@ -1,5 +1,6 @@
 import { Stack } from '@mui/material';
 import { AssetCard, AssetDistributionChart } from '../../components';
+import mockAssetData from '../../mocks/mockAssetData';
 
 /* const mockList = [
   {
@@ -15,28 +16,6 @@ import { AssetCard, AssetDistributionChart } from '../../components';
     name: 'Account',
   },
 ]; */
-
-const mockAssetData = {
-  id: '1',
-  name: 'Bitcoin',
-  amount: '0.45',
-  symbol: 'BTC',
-  value: '2500',
-  currencySymbol: '$',
-  percent: '5,56%',
-  percentSign: '+',
-};
-
-/* const mockPriceCardObj = {
-  id: '32432',
-  name: 'Dow Jones',
-  value: '31,841',
-  symbol: 'DOW',
-  currencySymbol: '$',
-  percent: '5,56%',
-  point: '14.23',
-  pointSign: '+' as iPointSign,
-}; */
 
 /* const mockCurrencyAsset: iCurrencyAsset = {
   amount: 500,
