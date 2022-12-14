@@ -13,7 +13,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "outDir": "../../dist/out-tsc",
-    "types": ["node"],
+    "types": ["node","@types/jest"],
     "emitDecoratorMetadata": true,
     
   },
@@ -30,6 +30,6 @@
   "**/*.spec.js",
   "**/*.test.js",
   "**/*.spec.jsx",
-  "**/*.test.jsx"],
+  "**/*.test.jsx","jest.config.ts"],
 
 }
