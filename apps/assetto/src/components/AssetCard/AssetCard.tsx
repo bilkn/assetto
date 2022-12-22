@@ -1,4 +1,11 @@
-import { Box, Card, CardContent, Stack, Typography } from '@mui/material';
+import {
+  Box,
+  Card,
+  CardContent,
+  Stack,
+  Typography,
+  useTheme,
+} from '@mui/material';
 import { iAsset } from 'libs/shared-types/src';
 import ThreeDotsMenuButton from '../utils/ThreeDotsMenuButton';
 
@@ -13,9 +20,9 @@ function AssetCard({ asset }: { asset: iAsset }) {
     percent,
     percentSign,
   } = asset;
-
+  const theme = useTheme();
   return (
-    <Card>
+    <Card sx={{ boxShadow: theme.shadows[1] }}>
       <Box>
         <CardContent sx={{ position: 'relative' }}>
           <ThreeDotsMenuButton />

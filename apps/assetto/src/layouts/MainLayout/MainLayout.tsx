@@ -1,11 +1,12 @@
 import { Box, Container } from '@mui/material';
-import { MobileAppBar } from '../../components';
+import { CustomBottomNavigation, MobileAppBar } from '../../components';
 
 function MainLayout({ children }: { children: JSX.Element }) {
   return (
-    <Box>
+    <Box sx={{ height: '100%' }}>
       <MobileAppBar />
       <Container>{children}</Container>
+      <CustomBottomNavigation />
     </Box>
   );
 }

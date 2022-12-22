@@ -5,12 +5,12 @@ import AssettoLogo from '../../assets/assetto-logo.svg';
 function MobileAppBar() {
   return (
     <AppBar
-      position="static"
+      position="sticky"
       sx={{ backgroundColor: 'common.white', boxShadow: 1 }}
     >
       <Container>
         <Toolbar sx={{ justifyContent: 'space-between', minHeight: '60px' }}>
-          <Box>
+          <Box sx={{ width: '25px' }}>
             <Link href="/">
               <Box component="img" alt="Assetto" src={AssettoLogo} />
             </Link>

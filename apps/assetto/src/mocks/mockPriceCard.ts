@@ -1,6 +1,6 @@
 import { iPointSign } from '../types/common.types';
 
-const mockPriceCard = {
+const mockPriceData = {
   id: '32432',
   name: 'Dow Jones',
   value: '31,841',
@@ -11,4 +11,4 @@ const mockPriceCard = {
   pointSign: '+' as iPointSign,
 };
 
-export default mockPriceCard;
+export default mockPriceData;

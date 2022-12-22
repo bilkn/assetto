@@ -59,6 +59,10 @@ const theme = createTheme({
     body2: {
       fontSize: '1.4rem',
     },
+    h1: {
+      fontSize: '2rem',
+      fontWeight: '500',
+    },
 
     h2: {
       fontSize: '2rem',
@@ -70,6 +74,9 @@ const theme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
+          boxShadow: customShadows[1],
+        },
+        elevation2: {
           boxShadow: customShadows[2],
         },
       },
