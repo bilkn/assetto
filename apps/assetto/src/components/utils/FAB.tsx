@@ -9,7 +9,7 @@ function FloatingActionButton(props: FabProps) {
       color="secondary"
       {...props}
       aria-label="add asset"
-      sx={{ position: 'absolute', right: '20px', bottom: '60px' }}
+      sx={{ position: 'fixed', right: '20px', bottom: '60px' }}
     >
       <AddIcon color={theme.palette.common.white} />
     </Fab>

@@ -12,17 +12,17 @@ interface iPriceCard {
   pointSign: '+' | '-';
 }
 
-type iMarketItem = { marketItem: iPriceCard };
+type iPriceData = { priceData: iPriceCard };
 
-function PriceCard({ marketItem }: iMarketItem) {
+function PriceCard({ priceData }: iPriceData) {
   const { id, name, value, symbol, currencySymbol, percent, point, pointSign } =
-    marketItem;
+    priceData;
 
   const pickColorBySign = (sign: iPointSign) =>
     sign === '+' ? 'extra.0' : 'warning.main';
 
   return (
-    <Card sx={{ width: '120px' }}>
+    <Card sx={{ flexShrink: '0', width: '120px' }}>
       <CardContent
         sx={{
           paddingX: '8px',

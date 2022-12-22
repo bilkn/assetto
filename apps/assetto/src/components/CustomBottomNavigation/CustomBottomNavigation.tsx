@@ -38,7 +38,13 @@ function CustomBottomNavigation() {
         console.log(newValue);
         setValue(newValue);
       }}
-      sx={{ position: 'absolute', bottom: '0', left: '0', width: '100%' }}
+      sx={{
+        boxShadow: theme.shadows[1],
+        position: 'sticky',
+        bottom: '0',
+        left: '0',
+        width: '100%',
+      }}
     >
       {menuItems.map(({ label, Icon }, i) => (
         <BottomNavigationAction
