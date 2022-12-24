@@ -1,5 +1,7 @@
 import { Button, styled } from '@mui/material';
 
+// TODO: fix button text isn't aligned
+
 const CustomButton = styled(Button)(({ theme }) => ({
   fontSize: '1.4rem',
   '&.MuiButton-containedPrimary:hover': {

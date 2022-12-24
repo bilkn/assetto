@@ -16,6 +16,10 @@ function GlobalStyles() {
           fontSize: '62.5%',
           height: '100%',
         },
+        img: {
+          display: 'block',
+          width: '100%',
+        },
       }}
     />
   );

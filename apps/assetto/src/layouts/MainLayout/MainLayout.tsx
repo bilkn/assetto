@@ -5,7 +5,7 @@ function MainLayout({ children }: { children: JSX.Element }) {
   return (
     <Box sx={{ height: '100%' }}>
       <MobileAppBar />
-      <Container>{children}</Container>
+      <Container sx={{ minHeight: 'calc(100% - 60px)' }}>{children}</Container>
       <CustomBottomNavigation />
     </Box>
   );

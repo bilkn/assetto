@@ -40,7 +40,7 @@ function CustomBottomNavigation() {
       }}
       sx={{
         boxShadow: theme.shadows[1],
-        position: 'sticky',
+        position: 'fixed',
         bottom: '0',
         left: '0',
         width: '100%',
@@ -48,7 +48,7 @@ function CustomBottomNavigation() {
     >
       {menuItems.map(({ label, Icon }, i) => (
         <BottomNavigationAction
-          sx={{ fontSize: '1.2rem' }}
+          sx={{ fontSize: '1.2rem', height: '60px' }}
           label={<Typography sx={{ fontSize: '1rem' }}>{label}</Typography>}
           icon={
             <Icon

@@ -1,4 +1,5 @@
 import { Box, Stack, Typography } from '@mui/material';
+import { Outlet } from 'react-router-dom';
 import {
   AssetCard,
   AssetDistributionChart,
@@ -9,6 +10,7 @@ import {
 import mockTotalBalanceData from '../../mocks/mockTotalBalanceData';
 import mockAssetData from '../../mocks/mockAssetData';
 import mockPriceData from '../../mocks/mockPriceCard';
+import { MainLayout } from '../../layouts';
 
 /* const mockList = [
   {
@@ -33,6 +35,7 @@ import mockPriceData from '../../mocks/mockPriceCard';
 const mockPriceDatas = new Array(20).fill('').map(() => mockPriceData);
 
 function PriceCardContainer() {
+  // TODO: On desktop list is not scrollable, make it scrollable.
   return (
     <Stack
       direction="row"
@@ -56,22 +59,24 @@ function PriceCardContainer() {
 
 function Home() {
   return (
-    <Box>
-      <Typography variant="h1" sx={{ mt: 10 }}>
-        Dashboard
-      </Typography>
-      <PriceCardContainer />
-      <Stack spacing={3}>
-        <TotalBalanceChart chartData={mockTotalBalanceData} />
-        <AssetDistributionChart />
-        <AssetCard asset={mockAssetData} />
-        <AssetCard asset={mockAssetData} />
-        <AssetCard asset={mockAssetData} />
-        <AssetCard asset={mockAssetData} />
-        <AssetCard asset={mockAssetData} />
-        <FAB />
-      </Stack>
-    </Box>
+    <MainLayout>
+      <Box>
+        <Typography variant="h1" sx={{ mt: 10 }}>
+          Dashboard
+        </Typography>
+        <PriceCardContainer />
+        <Stack spacing={3}>
+          <TotalBalanceChart chartData={mockTotalBalanceData} />
+          <AssetDistributionChart />
+          <AssetCard asset={mockAssetData} />
+          <AssetCard asset={mockAssetData} />
+          <AssetCard asset={mockAssetData} />
+          <AssetCard asset={mockAssetData} />
+          <AssetCard asset={mockAssetData} />
+          <FAB />
+        </Stack>
+      </Box>
+    </MainLayout>
   );
 }
 
