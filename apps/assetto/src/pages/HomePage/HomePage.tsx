@@ -1,5 +1,4 @@
 import { Box, Stack, Typography } from '@mui/material';
-import { Outlet } from 'react-router-dom';
 import {
   AssetCard,
   AssetDistributionChart,
@@ -10,7 +9,6 @@ import {
 import mockTotalBalanceData from '../../mocks/mockTotalBalanceData';
 import mockAssetData from '../../mocks/mockAssetData';
 import mockPriceData from '../../mocks/mockPriceCard';
-import { MainLayout } from '../../layouts';
 
 /* const mockList = [
   {
@@ -43,9 +41,11 @@ function PriceCardContainer() {
       sx={{
         px: 2,
         pt: 2,
+        pb: 3,
         overflowX: 'auto',
         marginX: '-10px',
         '::-webkit-scrollbar': {
+          height: '0',
           width: '0',
         },
       }}
@@ -57,27 +57,25 @@ function PriceCardContainer() {
   );
 }
 
-function Home() {
+function HomePage() {
   return (
-    <MainLayout>
-      <Box>
-        <Typography variant="h1" sx={{ mt: 10 }}>
-          Dashboard
-        </Typography>
-        <PriceCardContainer />
-        <Stack spacing={3}>
-          <TotalBalanceChart chartData={mockTotalBalanceData} />
-          <AssetDistributionChart />
-          <AssetCard asset={mockAssetData} />
-          <AssetCard asset={mockAssetData} />
-          <AssetCard asset={mockAssetData} />
-          <AssetCard asset={mockAssetData} />
-          <AssetCard asset={mockAssetData} />
-          <FAB />
-        </Stack>
-      </Box>
-    </MainLayout>
+    <Box>
+      <Typography variant="h1" sx={{ mt: 10 }}>
+        Dashboard
+      </Typography>
+      <PriceCardContainer />
+      <Stack spacing={3}>
+        <TotalBalanceChart chartData={mockTotalBalanceData} />
+        <AssetDistributionChart />
+        <AssetCard asset={mockAssetData} />
+        <AssetCard asset={mockAssetData} />
+        <AssetCard asset={mockAssetData} />
+        <AssetCard asset={mockAssetData} />
+        <AssetCard asset={mockAssetData} />
+        <FAB />
+      </Stack>
+    </Box>
   );
 }
 
-export default Home;
+export default HomePage;

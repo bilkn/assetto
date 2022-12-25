@@ -4,6 +4,10 @@ import { Button, styled } from '@mui/material';
 
 const CustomButton = styled(Button)(({ theme }) => ({
   fontSize: '1.4rem',
+  lineHeight: 1,
+  minHeight: '40px',
+  padding: '0.9em',
+  textTransform: 'none',
   '&.MuiButton-containedPrimary:hover': {
     backgroundColor: theme.palette.primary.light,
   },

@@ -1,21 +1,14 @@
-import { Box, FormControlLabel, Stack, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 import {
   CustomButton,
-  CustomCheckbox,
   CustomRouterLink,
   CustomTextField,
 } from '@assetto/assetto-components';
-import { Link } from 'react-router-dom';
 import AssettoLogo from '../../assets/assetto-logo.svg';
 import { FullscreenLayout } from '../../layouts';
 import googleLogo from '../../assets/google-logo.png';
-/* <Box>
-<FormControlLabel
-  control={<CustomCheckbox />}
-  label={<Typography sx={{ fontSize: '1.2rem' }}>Hello</Typography>}
-/>
-</Box> */
-function Register() {
+
+function SignUpPage() {
   return (
     <FullscreenLayout>
       <Box
@@ -53,11 +46,11 @@ function Register() {
             Register
           </CustomButton>
           <CustomButton
-            color="neutral"
+            color="external"
             variant="contained"
             fullWidth
             sx={{ mt: 2 }}
-            endIcon={
+            startIcon={
               <Box component="img" src={googleLogo} sx={{ width: '16px' }} />
             }
           >
@@ -69,7 +62,7 @@ function Register() {
             sx={{ fontSize: '1.4rem', mt: 2 }}
           >
             Already have an account?{' '}
-            <CustomRouterLink to="/login">Login</CustomRouterLink>
+            <CustomRouterLink to="/sign-in">Sign In</CustomRouterLink>
           </Typography>
         </Box>
       </Box>
@@ -77,4 +70,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default SignUpPage;

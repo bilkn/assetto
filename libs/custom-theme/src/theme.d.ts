@@ -22,6 +22,7 @@ declare module '@mui/material/styles' {
   interface PaletteOptions {
     extra?: IExtraOptions;
     neutral?: INeutralOptions;
+    external?: INeutralOptions;
   }
 }
 
@@ -34,6 +35,7 @@ declare module '@emotion/react' {
 declare module '@mui/material/Button' {
   interface ButtonPropsColorOverrides {
     neutral: true;
+    external: true;
   }
 }
 

@@ -36,6 +36,9 @@ const theme = createTheme({
     neutral: {
       main: '#EAEAEA',
     },
+    external: {
+      main: 'rgba(0, 195, 249, 0.1)',
+    },
     grey: {
       200: '#EAEAEA',
       300: '#D8D8D8',
@@ -92,6 +95,19 @@ const theme = createTheme({
             },
             '&:active': {
               backgroundColor: '#C9C9C9',
+            },
+          },
+        },
+        {
+          props: { variant: 'contained', color: 'external' as const },
+          style: {
+            backgroundColor: 'rgba(0, 195, 249, 0.1)',
+            boxShadow: 'none',
+            '&:hover': {
+              backgroundColor: 'rgba(0, 195, 249, 0.2)',
+            },
+            '&:active': {
+              backgroundColor: 'rgba(0, 195, 249, 0.3)',
             },
           },
         },
